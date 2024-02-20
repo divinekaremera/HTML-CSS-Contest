@@ -16,8 +16,9 @@
 
 body {
   font-family: "Maven Pro";
-  font-size: 18px;
+  font-size: 17px;
   padding: 0;
+  overflow-x: hidden;
   margin: 0;
   color: #555;
 }
@@ -54,10 +55,36 @@ a {
 }
 
 .btn {
-  padding: 20px 35px;
+  padding: 15px 30px;
   display: inline-block;
   font-weight: 400;
   font-size: 17px;
   text-transform: uppercase;
   transition: 0.5s;
+}
+
+@media screen and (max-width: 900px) {
+  .btn {
+    padding: 12px 24px;
+  }
+  .section-header.head-title h1 {
+    font-size: 18pt;
+  }
+
+  .about-section .content {
+    gap: 0px;
+  }
+
+  .event-time #countdown .num {
+    font-size: 22pt;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .section-header.head-title h1 {
+    font-size: 16pt;
+  }
+  .btn {
+    padding: 10px 20px;
+  }
 }

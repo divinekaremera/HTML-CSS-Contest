@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="body-container">
+      <header class="header">
+        <div class="content">
+          <a class="brand flex" href="./index.html">
+            <img src="./images/logo.png" alt="Logo Image" />
+            <div class="desc">
+              <div class="site-name">ALUMNI-CONNECT</div>
+              <div class="site-slogan">Inspiring the future</div>
+            </div>
+          </a>
+          <label class="menu-bars" for="menuOpen">
+            <i class="fa fa-bars"></i>
+          </label>
+          <input type="checkbox" id="menuOpen" style="display: none" />
+
+          <div class="links">
+            <a href="./about-us.html">About </a>
+            <a href="./events.html">Events</a>
+            <a href="./reserve.html" class="btn-primary btn">Reserve seat</a>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Contact Us Section -->
+    <section class="contact section">
+      <div class="content">
+        <div class="flex justify-center">
+          <div class="head-title section-header">
+            <h1>
+              Reserve Your
+              <span class="color-primary"
+                ><span class="text-span">Seat</span></span
+              >
+            </h1>
+          </div>
+        </div>
+        <p class="p">
+          For inquiries and event reservations, please fill out the form below:
+        </p>
+        <form action="#" method="POST">
+          <div class="input">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="input">
+            <label for="name">Phone</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="input">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="input">
+            <label for="event">Event</label>
+            <select name="event" id="event-input"></select>
+          </div>
+
+          <div class="links">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-body">
+        <div class="left">
+          <a class="brand flex" href="./index.html">
+            <img src="./images/logo.png" alt="Logo Image" />
+            <div class="desc">
+              <div class="site-name">ALUMNI-CONNECT</div>
+              <div class="site-slogan">Inspiring the future</div>
+            </div>
+          </a>
+          <p class="p">
+            Explore the rich tapestry of our alumni network and engage in events
+            that celebrate the achievements, ambitions, and diverse paths of our
+            esteemed graduates.
+          </p>
+          <div class="social-links flex">
+            <a href="#">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="useful-links">
+          <h3>Useful links</h3>
+          <a href="./about-us.html">About us</a>
+          <a href="./events.html">Events</a>
+          <a href="./reserve.html">Reserve seat</a>
+        </div>
+        <div class="right">
+          <h3>Subscribe</h3>
+
+          <form action="">
+            <div class="input">
+              <input type="email" placeholder="Your email" type="email" id="" />
+            </div>
+            <div class="links">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+          </form>
+        </div>
+        <div class="bottom">@ALUMNI-CONNECT 2023</div>
+      </div>
+    </footer>
+    <script src="./js/main.js"></script>
+    <script>
+      const page = "contact";
+    </script>
+  </body>
+</html>
