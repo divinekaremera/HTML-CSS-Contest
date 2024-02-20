@@ -1,0 +1,188 @@
+.upcoming-section {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  color: #fff; /* Adjust text color for better visibility */
+
+  padding: 150px 80px;
+  position: relative;
+}
+
+section.upcoming-section {
+  display: flex;
+  justify-content: center;
+}
+
+.upcoming-section .content {
+  max-width: 1200px;
+  width: 100%;
+  font-family: "Poppins";
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+.upcoming-section .event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.upcoming-section .head-title {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 4px;
+}
+
+.upcoming-section .event-title {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 42px;
+}
+
+.upcoming-section svg {
+  height: 32px;
+  width: 32px;
+}
+.upcoming-section .event-time .flex {
+  gap: 45px;
+  margin-top: -50px;
+}
+
+.upcoming-section .time .num {
+  font-weight: 500;
+  font-size: 50pt;
+}
+
+.upcoming-section .time .text {
+  text-transform: uppercase;
+  font-size: 12pt;
+  text-align: center;
+}
+
+.upcoming-section .event-location {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.upcoming-section .event-details,
+.upcoming-section .event-time {
+  max-width: 500px;
+}
+
+.upcoming-section .absolute-btn {
+  position: absolute;
+  top: 100%;
+  right: 200px;
+  margin-top: -35px;
+  background: #fff;
+  color: var(--primary-color);
+  text-align: center;
+  box-shadow: 0 0 32px 1px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  background: #fff;
+  color: var(--primary-color);
+  text-align: center;
+  box-shadow: 0 0 32px 1px rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.about-section {
+  padding: 50px 80px;
+}
+.about-section .content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-section .image {
+  position: relative;
+  padding: 50px;
+}
+.about-section .image .meet {
+  aspect-ratio: 3/2;
+  width: 350px;
+  border-radius: 1px;
+  top: 50%;
+  box-shadow: 0 0 32px 1px rgba(0, 0, 0, 0.1);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.about-section .text {
+  width: 100%;
+  max-width: 500px;
+}
+
+.about-section .circles {
+  z-index: 1;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.about-section .circle {
+  width: 100%;
+  aspect-ratio: 1;
+  content: "";
+  border: 1px solid #eee;
+  border-radius: 50%;
+  padding: 80px;
+}
+
+.about-section .head-title {
+  font-size: 18pt;
+  width: fit-content;
+  color: #000;
+  font-family: "Poppins";
+}
+.about-section .head-title .color-primary {
+  display: flex;
+  width: 100%;
+  word-spacing: 50px;
+
+  position: relative;
+}
+
+.about-section .color-primary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  background-color: var(--primary-color);
+  height: 5px;
+}
+.about-section .color-primary .text-span {
+  padding-right: 20px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.about-section .desc {
+  display: flex;
+  gap: 10px;
+  text-align: justify;
+  flex-direction: column;
+}
+.about-section p.second {
+  border-left: 2px solid var(--primary-color);
+  padding-left: 30px;
+}
+
+.about-section .links {
+  padding-top: 30px;
+}
