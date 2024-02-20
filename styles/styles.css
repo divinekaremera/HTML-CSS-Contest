@@ -16,7 +16,7 @@
 
 body {
   font-family: "Maven Pro";
-  font-size: 18px;
+  font-size: 17px;
   padding: 0;
   margin: 0;
   color: #555;
@@ -54,7 +54,7 @@ a {
 }
 
 .btn {
-  padding: 20px 35px;
+  padding: 15px 30px;
   display: inline-block;
   font-weight: 400;
   font-size: 17px;

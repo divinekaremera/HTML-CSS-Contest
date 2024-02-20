@@ -1,109 +1,145 @@
 /* styles.css */
 
 /* Global Reset */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Maven Pro', sans-serif;
-    background-color: #fff; /* Changed background color to white */
-    color: #333; /* Changed text color */
+  font-family: "Maven Pro", sans-serif;
+  background-color: #fff; /* Changed background color to white */
+  color: #333; /* Changed text color */
 }
 
 .body-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header .content {
+  max-width: 1200px;
+  padding: 15px 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header .brand {
-    display: flex;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  font-family: "Maven Pro";
+  align-items: center;
+}
+.header .links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header .links a:not(.btn) {
+  color: #000;
+  padding: 10px 15px;
 }
 
 .header .brand img {
-    width: 80px;
-    height: auto;
-    margin-right: 20px;
+  width: 60px;
+  height: auto;
 }
 
 .site-name {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1em;
+  font-weight: bold;
+  color: #000;
+  font-family: "Poppins";
 }
 
 .site-slogan {
-    font-size: 1em;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  color: var(--secondary-color);
 }
 
 .links {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .links a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 10px;
+  text-decoration: none;
+  margin-right: 10px;
 }
 
 .primary-btn {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .primary-btn .btn-link {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 .primary-btn .btn-link:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
+}
+#hello {
+  display: flex;
+  padding: 80px 0;
+  justify-content: center;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+#hello .container {
+  max-width: 1200px;
+  width: 100%;
 }
 
-.container .row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#hello .container .row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.col-md-6 {
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
+.col-md-6:not(.image) {
+  width: 100%;
+  max-width: 600px;
 }
 
+.col-md-6.image {
+  width: 100%;
+  max-width: 400px;
+}
 .col-md-6 img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 #hello .text-center {
-    text-align: center; /* Center align the text within #hello element */
+  text-align: center; /* Center align the text within #hello element */
 }
 
 #hello h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #hello p {
-    line-height: 1.6;
+  line-height: 1.6;
 }
