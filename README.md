@@ -28,8 +28,8 @@ Alumni Connect serves as a central hub for university alumni to stay informed ab
 
 To run Alumni Connect locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/Alumni-Connect.git`
-2. Navigate to the project directory: `cd Alumni-Connect`
+1. Clone the repository: `git clone https://github.com/divinekaremera/HTML-CSS-Contest.git`
+2. Navigate to the project directory: `cd HTML-CSS-Contest`
 3. Open `index.html` in your preferred web browser.
 
 ## Usage
