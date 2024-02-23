@@ -7,6 +7,7 @@ const events = [
     description:
       "Join us for an evening of networking and reconnecting with fellow alumni. Drinks and appetizers will be served.",
     slug: "annual-alumni-mixer",
+    category: "campus-event",
   },
   {
     title: "Career Development Workshop",
@@ -16,6 +17,7 @@ const events = [
     description:
       "Explore new career opportunities and gain valuable insights from industry professionals. Don't miss this chance to boost your career!",
     slug: "career-development-workshop",
+    category: "professional-development",
   },
   {
     image: "./images/sport.jpg",
@@ -26,6 +28,7 @@ const events = [
       "Get active and relive the university spirit at our annual sports day. Cheer for your favorite teams and enjoy a day filled with friendly competition.",
     video: "https://www.youtube.com/embed/I3OIbbuZ1XE",
     slug: "sports-day-at-campus",
+    category: "campus-event",
   },
   // Add more events as needed
   {
@@ -37,6 +40,7 @@ const events = [
       "Explore the fascinating world of Artificial Intelligence and its impact on our daily lives. Engage in discussions with leading experts in the field.",
     slug: "tech-talk-ai-everyday-life",
     video: "https://www.youtube.com/embed/tWP6z0hvw1M",
+    category: "professional-development",
   },
   {
     title: "Cultural Fest Extravaganza",
@@ -47,6 +51,7 @@ const events = [
       "Experience the diversity of cultures within our alumni community. Enjoy cultural performances, delicious international cuisine, and vibrant displays.",
     video: "https://www.youtube.com/embed/vIYJ27aRHRI",
     slug: "cultural-fest-extravaganza",
+    category: "campus-event",
   },
   {
     image: "./images/event3.jpg",
@@ -56,6 +61,7 @@ const events = [
     description:
       "Ignite your entrepreneurial spirit! Connect with successful entrepreneurs, attend insightful workshops, and learn from the leaders in the business world.",
     slug: "entrepreneurship-summit",
+    category: "professional-development",
   },
   {
     title: "Health and Wellness Retreat",
@@ -66,6 +72,7 @@ const events = [
     description:
       "Take a break and focus on your well-being. Join us for a rejuvenating retreat surrounded by nature, fitness activities, and mindfulness sessions.",
     slug: "health-wellness-retreat",
+    category: "campus-event",
   },
   {
     image: "./images/art.jpeg",
@@ -75,6 +82,7 @@ const events = [
     description:
       "Celebrate the creativity of our alumni community. Explore diverse artworks, meet talented artists, and immerse yourself in the world of artistic expression.",
     slug: "artistic-expression-gallery",
+    category: "campus-event",
   },
   {
     image: "./images/sport.jpg",
@@ -85,6 +93,7 @@ const events = [
     description:
       "Run for a cause! Join us in our annual charity run to support local community projects. Lace up your running shoes and make a positive impact.",
     slug: "annual-charity-run",
+    category: "campus-event",
   },
   {
     image: "./images/event4.jpg",
@@ -95,6 +104,7 @@ const events = [
     description:
       "Stay updated on the latest advancements in science and technology. Engage in discussions, attend presentations, and connect with experts in various fields.",
     slug: "science-technology-symposium",
+    category: "professional-development",
   },
   {
     image: "./images/event1.jpg",
@@ -105,6 +115,7 @@ const events = [
     description:
       "Dress in your finest attire and join us for a magical winter night. Enjoy live music, gourmet cuisine, and dance the night away in a winter wonderland setting.",
     slug: "winter-wonderland-gala",
+    category: "campus-event",
   },
   {
     image: "./images/meeting.webp",
@@ -115,6 +126,7 @@ const events = [
     description:
       "Become an advocate for the environment! Attend our workshop on environmental conservation, learn about sustainable practices, and contribute to a greener future.",
     slug: "environmental-conservation-workshop",
+    category: "campus-event",
   },
 ];
 
@@ -150,16 +162,18 @@ function getSlugFromUrl() {
 
 function eventHTML(event) {
   return `
-        <div class="event">
-          <div class="image">
+        <div class="event ${event.category}">
+          <a class="image" href="event.html?${event.slug}">
             <img src="${event.image}" alt="Image" />
-          </div>
+          </a>
           <div class="abs">
             <div class="num">${formatDay(event.time)}</div>
             <div class="text">${formatMonth(event.time)}</div>
           </div>
           <div class="details">
-            <div class="event-title">${event.title}</div>
+            <a class="event-title" href="event.html?${event.slug}">${
+    event.title
+  }</a>
             <div class="event-short-desc">${event.description}</div>
             <div class="list">
               <p class="event-location">
@@ -169,6 +183,9 @@ function eventHTML(event) {
               </p>
               <p class="event-time">
                 <i class="fa fa-calendar"></i>${event.time}
+              </p>
+              <p class="event-time">
+                <i class="fa fa-tag"></i>${event.category.replace("-", " ")}
               </p>
             </div>
             <div class="link">
@@ -247,6 +264,26 @@ $(document).ready(function () {
       // Append the event HTML to the .events container
       $(".events").append(html);
     });
+
+    $(".btn.all").on("click", function () {
+      $(".event").css("display", "block");
+      $(".nav-links .btn").removeClass("active");
+      $(this).addClass("active");
+    });
+
+    $(".btn.campus-events").on("click", function () {
+      $(".event.campus-event").css("display", "block");
+      $(".event.professional-development").css("display", "none");
+      $(".nav-links .btn").removeClass("active");
+      $(this).addClass("active");
+    });
+
+    $(".btn.professional-development").on("click", function () {
+      $(".event.campus-event").css("display", "none");
+      $(".event.professional-development").css("display", "block");
+      $(".nav-links .btn").removeClass("active");
+      $(this).addClass("active");
+    });
   }
   if (page === "contact") {
     const eventSelect = $("#event-input");
@@ -275,6 +312,9 @@ $(document).ready(function () {
     $("#eventLocation").html(
       `<i class="fa fa-location-crosshairs"></i> ${selectedEvent.location}`
     );
+    $("#eventCategory").html(
+      `<i class="fa fa-tag"></i> ${selectedEvent.category.replace("-", " ")}`
+    );
     $("#eventImage").html(
       `<img src="${selectedEvent.image}" alt="${selectedEvent.title}" /> `
     );
@@ -294,6 +334,6 @@ $(document).ready(function () {
     >Reserve seat</a
   >`);
 
-    $("#reserveBtn").attr("href", `reserve.html?slug=${selectedEvent.slug}`);
+    $("#reserveBtn").attr("href", `reserve.html?${selectedEvent.slug}`);
   }
 });
