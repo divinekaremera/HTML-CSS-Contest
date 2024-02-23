@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect /page to /page.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Force HTTPS
